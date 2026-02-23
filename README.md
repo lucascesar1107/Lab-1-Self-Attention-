@@ -1,6 +1,6 @@
 # Lab P1-01 – Implementação do Scaled Dot-Product Attention
 
-Este projeto implementa o mecanismo de Scaled Dot-Product Attention conforme descrito no paper *Attention Is All You Need*.
+Este projeto implementa o mecanismo de Scaled Dot-Product Attention conforme descrito no artigo científico *Attention Is All You Need*.
 
 A implementação segue a fórmula:
 
