@@ -1,28 +1,61 @@
-# Lab P1-01 - Implementação de Self-Attention
+# Lab P1-01 – Implementação do Scaled Dot-Product Attention
 
-Este projeto implementa o mecanismo de Scaled Dot-Product Attention usando apenas NumPy.
+Este projeto implementa o mecanismo de Scaled Dot-Product Attention conforme descrito no paper *Attention Is All You Need*.
 
-A fórmula utilizada foi:
+A implementação segue a fórmula:
 
 Attention(Q, K, V) = softmax((QK^T) / sqrt(dk)) V
 
+A biblioteca utilizada para as operações matriciais foi o NumPy.
+
+---
+
 ## Requisitos
 
-- Python 3.x
-- Numpy
+- Python 3.x  
+- NumPy  
 
-## Como executar
+Instalação do NumPy:
 
-1. Instalar NumPy:
 pip install numpy
 
-2. Executar o teste:
+---
+
+## Execução
+
+Para executar o exemplo de teste, utilize:
+
 python test_attention.py
 
-## Sobre o fator sqrt(dk)
+O script imprime as matrizes de entrada (Q, K, V) e o resultado da aplicação do mecanismo de atenção.
 
-A divisão por sqrt(dk) é utilizada para evitar que os valores do produto escalar fiquem muito grandes, o que poderia afetar o resultado do softmax.
+---
 
-## Observação
+## Normalização pelo fator √dk
 
-O arquivo test_attention.py contém um exemplo numérico simples para validar o funcionamento da implementação.
+Após o cálculo do produto escalar QK^T, os valores são divididos por √dk, onde dk representa a dimensão das chaves (número de colunas de K).
+
+Essa normalização reduz a magnitude dos valores antes da aplicação do softmax, evitando que a distribuição resultante fique excessivamente concentrada.
+
+---
+
+## Exemplo Numérico
+
+Entrada utilizada no teste:
+
+```
+Q = [[1, 0],
+     [0, 1]]
+
+K = [[1, 0],
+     [0, 1]]
+
+V = [[10, 0],
+     [0, 20]]
+
+Saída obtida:
+
+[[ 6.69  6.60]
+ [ 3.30 13.39]]
+```
+Os valores acima correspondem ao resultado da aplicação completa da fórmula do Scaled Dot-Product Attention.
