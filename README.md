@@ -6,6 +6,11 @@ A fórmula utilizada foi:
 
 Attention(Q, K, V) = softmax((QK^T) / sqrt(dk)) V
 
+## Requisitos
+
+- Python 3.x
+- Numpy
+
 ## Como executar
 
 1. Instalar NumPy:
